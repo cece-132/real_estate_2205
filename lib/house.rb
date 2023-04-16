@@ -13,11 +13,7 @@ class House
     end
 
     def above_market_average?
-        if @price > 500000
-            true
-        else
-            false
-        end
+      @price > 500000
     end
 
     def rooms_from_category(room_category)
@@ -25,11 +21,7 @@ class House
     end
 
     def area
-        area = 0
-        @rooms.each do |room|
-            area += room.area
-        end
-        area
+        @rooms.sum { |room| room.area }
     end
 
     def details
